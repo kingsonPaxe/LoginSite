@@ -1,0 +1,154 @@
+#main {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+#main .left, .right {
+    width: 50%;
+    height: 100vh;
+}
+
+#main .left {
+    display: flex;
+    align-items: center;
+}
+
+#main .right {
+    background-image: url("../vendors/imagens/pexels-pixabay-207665.jpg");
+    background-size: cover;
+}
+
+#main .left #content {
+    width: 65%;
+    height: 60%;
+    margin: auto;
+}
+
+#main .right #content {
+    position: absolute;
+}
+#main .left #content .title{
+    font-size: 1.5em;
+    color: rgba(0,0,0,0.7);
+}
+#main .left #content .description{
+    font-size: 0.8em;
+    color: rgba(0,0,0,0.6);
+    margin-top: 6px;
+}
+
+#main .left #content .form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+#main .left #content .form input:not( .checkbox ){
+    padding: 10px;
+    border-radius: 4px;
+    border:2px solid rgba(0,0,0,0.3);
+    margin-top: 7px;
+}
+
+#main .left #content .form label{
+        margin-top: 20px;
+        font-size: 0.8em;
+        font-weight: 600;
+}
+#main .left #content .form .remember_recoverPass{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 0.78em;
+    justify-content: space-between;
+}
+
+#main .left #content .form .remember_recoverPass .remember{
+    display: flex;
+    align-items: center;
+}
+
+#main .left #content .form .remember_recoverPass .remember p{
+    margin-left: 4px;
+}
+
+#main .left #content .form .buttons button{
+    width: 100%;
+    border-style: none;
+    border-radius: 4px;
+    padding: 7px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+#main .left #content .form .buttons button:first-child{
+    background-color: #222;
+    color: #fff;
+}
+
+#main .left #content .form .buttons button:last-child{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#main .left #content .form .buttons button:last-child img{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+#main .left #content .signup{
+    font-size: 0.8em;
+    color: rgba(0,0,0,0.8);
+    margin-top: 7px;
+}
+/* ================================================= Right side */
+
+#main .right {
+    background-image: url("../vendors/imagens/p.jpg");
+    background-size: cover;
+    position: relative;
+    padding: 20px;
+}
+
+#main .right #content {
+    width: calc(100% - 40px);
+    height: 200px;
+    background-color: rgba(240, 229, 237, 0.6);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    position: absolute;
+    bottom:20px;
+    animation: animRight 2s infinite ease-in-out;
+}
+@keyframes animRight{
+    0%{
+        bottom: 20px;
+        transform: scale(1);
+    }
+
+    50%{
+        bottom: calc(100% - 220px);
+        transform: scale(0.8);
+    }
+
+    100%{
+        bottom: 20px;
+        transform: scale(1);
+    }
+}
+@media screen and (max-width: 800px){
+    #main .left{
+        position:absolute;
+        z-index: 30;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    #main .left, .right{
+        width: 100%;
+        
+    }
+    #main .left p, h1, label, strong{
+        color: #fff;
+    }
+}
